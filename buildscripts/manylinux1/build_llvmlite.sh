@@ -47,7 +47,6 @@ if [ `uname -m` != 'aarch64' ]; then
   pip install *.whl
 else
   yum install -y llvm
-  python setup.py sdist
-  pip install --user dist/*
+  python setup.py install
 fi
 python -m llvmlite.tests -vb
