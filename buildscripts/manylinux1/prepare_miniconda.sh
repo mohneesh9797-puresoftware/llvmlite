@@ -3,9 +3,9 @@ set -e
 cd /root
 if [ `uname -m` = 'aarch64' ]; then
    yum install -y wget
-   wget -q "https://github.com/Archiconda/build-tools/releases/download/0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh" -O archiconda.sh
-   chmod +x archiconda.sh
-   bash archiconda.sh -b -f
+   wget -q "https://github.com/Archiconda/build-tools/releases/download/0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh" -O miniconda3.sh
+   chmod +x miniconda3.sh
+   bash miniconda3.sh -b -f
 else
   curl https://repo.continuum.io/miniconda/$1 > mini3.sh
   bash mini3.sh -b -f
