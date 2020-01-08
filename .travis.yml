@@ -26,9 +26,9 @@ install:
     - if [[ "${TRAVIS_CPU_ARCH}" == "arm64" ]]; then
         DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64;
       elif [ "$ARCH" == "x64" ]; then 
-        DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64; 
+        DOCKER_IMAGE=quay.io/pypa/manylinux2014_x86_64; 
       else 
-        DOCKER_IMAGE=quay.io/pypa/manylinux1_i686; 
+        DOCKER_IMAGE=quay.io/pypa/manylinux2014_i686; 
       fi
     - docker pull $DOCKER_IMAGE
 
