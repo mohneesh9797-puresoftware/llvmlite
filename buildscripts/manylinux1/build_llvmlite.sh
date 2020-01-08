@@ -46,7 +46,7 @@ if [ `uname -m` != 'aarch64' ]; then
   # Verify & Test
   pip install *.whl
 else
-  yum install zlib-devel
+  yum install -y zlib-devel
   python setup.py install
 fi
 python -m llvmlite.tests -vb
