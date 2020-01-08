@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 cd /root
+echo $1
 curl https://repo.continuum.io/miniconda/$1 > mini3.sh
 bash mini3.sh -b -f
 source /root/miniconda3/bin/activate root
