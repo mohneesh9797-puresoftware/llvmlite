@@ -24,7 +24,7 @@ matrix:
 
 install:
     - if ["$ARCH" == "aarch64"];then
-        DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64
+        DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64;
       elif [ "$ARCH" == "x64" ]; then 
         DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64; 
       else 
