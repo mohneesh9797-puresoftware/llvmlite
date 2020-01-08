@@ -33,8 +33,11 @@ install:
     - docker pull $DOCKER_IMAGE
 
 script:
-    - ./buildscripts/manylinux1/docker_run_$ARCH.sh build_llvmlite.sh $PYVER
-
+    - if [[ "${TRAVIS_CPU_ARCH}" == "arm64" ]]; then
+         sudo ./buildscripts/manylinux1/docker_run_$ARCH.sh build_llvmlite.sh $PYVER;
+      else 
+         ./buildscripts/manylinux1/docker_run_$ARCH.sh build_llvmlite.sh $PYVER;
+      fi
 notifications:
     email: false
     on_success: "change"
