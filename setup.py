@@ -45,7 +45,7 @@ build_ext = cmdclass.get('build_ext', build_ext)
 def build_library_files(dry_run, pic=False):
     cmd = [sys.executable, os.path.join(here_dir, 'ffi', 'build.py')]
     if pic:
-        os.environ['CXXFLAGS'] = os.environ.get('CXXFLAGS', '') + ' -fPIE'
+        os.environ['CXXFLAGS'] = os.environ.get('CXXFLAGS', '') + ' -fPIC'
     spawn(cmd, dry_run=dry_run)
 
 
