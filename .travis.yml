@@ -34,7 +34,7 @@ install:
 
 script:
     - if [[ "${TRAVIS_CPU_ARCH}" == "arm64" ]]; then
-         sudo ./buildscripts/manylinux1/docker_run_$ARCH.sh build_llvmlite.sh $PYVER;
+         bash ./buildscripts/manylinux1/docker_run_$ARCH.sh build_llvmlite.sh $PYVER;
       else 
          ./buildscripts/manylinux1/docker_run_$ARCH.sh build_llvmlite.sh $PYVER;
       fi
