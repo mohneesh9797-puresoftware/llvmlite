@@ -2,7 +2,7 @@
 set -e
 cd /root
 if [ `uname -m` = 'aarch64' ]; then
-   apt-get install wget
+   yum install wget
    curl https://github.com/Archiconda/build-tools/releases/download/0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh > mini3.sh
    chmod +x mini3.sh
    bash mini3.sh -b -f
