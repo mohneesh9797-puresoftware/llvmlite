@@ -47,6 +47,8 @@ if [ `uname -m` != 'aarch64' ]; then
   pip install *.whl
 else
   python --version
+  conda uninstall gcc
+  yum install -y gcc 
   yum install -y zlib-devel libedit-devel
   python setup.py install
 fi
