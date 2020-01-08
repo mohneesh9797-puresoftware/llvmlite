@@ -26,7 +26,9 @@ conda install -y -c numba/label/manylinux1 llvmdev
 export PATH=/opt/python/$pyver/bin:$PATH
 
 echo "Using python: $(which python)"
-
+if [ `uname -m` != 'aarch64' ]; then
+  curl -s https://packagecloud.io/install/repositories/abeja/platform-public/script.rpm.sh | sudo bash
+fi
 # Clean up
 git clean -xdf llvmlite build
 python setup.py clean
