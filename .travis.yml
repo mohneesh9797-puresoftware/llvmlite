@@ -18,10 +18,17 @@ matrix:
     - env: PYVER=cp35-cp35m  ARCH=x32
     - env: PYVER=cp36-cp36m  ARCH=x32
     - env: PYVER=cp37-cp37m  ARCH=x32
+    - env: PYVER=cp37-cp37m  ARCH=aarch64
 
 
 install:
-    - if [ "$ARCH" == "x64" ]; then DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64; else DOCKER_IMAGE=quay.io/pypa/manylinux1_i686; fi
+    - if ["$ARCH" == "aarch64"];then
+        DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64
+      elif [ "$ARCH" == "x64" ]; then 
+        DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64; 
+      else 
+        DOCKER_IMAGE=quay.io/pypa/manylinux1_i686; 
+      fi
     - docker pull $DOCKER_IMAGE
 
 script:
