@@ -46,7 +46,6 @@ if [ `uname -m` != 'aarch64' ]; then
   # Verify & Test
   pip install *.whl
 else
-  yum install -y llvm
   python setup.py install
 fi
 python -m llvmlite.tests -vb
