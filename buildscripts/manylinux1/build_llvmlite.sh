@@ -2,6 +2,7 @@
 set -e
 
 cd $(dirname $0)
+echo $1
 source ./prepare_miniconda.sh $1
 
 
