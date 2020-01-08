@@ -34,17 +34,17 @@ python setup.py clean
 # Build wheel
 distdir=$outputdir/dist_$(uname -m)_$pyver
 rm -rf $distdir
-python setup.py bdist_wheel -d $distdir
-
-# Audit wheel
-cd $distdir
 if [ `uname -m` = 'aarch64' ]; then
+  python setup.py bdist_wheel -d $distdir
+  # Audit wheel
+  cd $distdir
   auditwheel repair *.whl
+  cd wheelhouse
+  ls
+  # Verify & Test
+  pip install *.whl
+else
+  python setup.py sdist
+  pip install --user dist/*
 fi
-cd wheelhouse
-ls
-
-
-# Verify & Test
-pip install *.whl
 python -m llvmlite.tests -vb
