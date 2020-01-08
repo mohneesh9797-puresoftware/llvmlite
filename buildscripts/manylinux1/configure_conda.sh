@@ -1,5 +1,5 @@
 # Setup miniconda environment that is compatible with manylinux1 docker image
-if [` uame -m ` = "aarch64"];then
+if [ `uname -m` = 'aarch64' ]; then
   conda install -y conda=4.5.12 conda-build=3.17.6 anaconda-client
   echo "conda ==4.5.12" >> /root/miniconda3/conda-meta/pinned
   echo "conda-build ==3.17.6" >> /root/miniconda3/conda-meta/pinned
