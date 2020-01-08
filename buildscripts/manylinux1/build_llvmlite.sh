@@ -34,7 +34,7 @@ python setup.py clean
 # Build wheel
 distdir=$outputdir/dist_$(uname -m)_$pyver
 rm -rf $distdir
-if [ `uname -m` = 'aarch64' ]; then
+if [ `uname -m` != 'aarch64' ]; then
   python setup.py bdist_wheel -d $distdir
   # Audit wheel
   cd $distdir
