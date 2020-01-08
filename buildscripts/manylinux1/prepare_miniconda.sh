@@ -3,8 +3,8 @@ set -e
 cd /root
 if [ `uname -m` = 'aarch64' ]; then
    curl "https://github.com/Archiconda/build-tools/releases/download/0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh" -O archiconda.sh
-   chmod +x archiconda.sh
-   bash archiconda.sh -b -p $HOME/miniconda
+   chmod +x Archiconda3-0.2.3-Linux-aarch64.sh
+   bash Archiconda3-0.2.3-Linux-aarch64.sh -b -p $HOME/miniconda
    export PATH="$HOME/miniconda/bin:$PATH"
    sudo cp -r $HOME/miniconda/bin/* /usr/bin/
    hash -r
