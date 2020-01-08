@@ -2,7 +2,7 @@
 set -e
 cd /root
 if [ `uname -m` = 'aarch64' ]; then
-   wget -q "https://github.com/Archiconda/build-tools/releases/download/0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh" -O archiconda.sh
+   curl "https://github.com/Archiconda/build-tools/releases/download/0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh" -O archiconda.sh
    chmod +x archiconda.sh
    bash archiconda.sh -b -p $HOME/miniconda
    export PATH="$HOME/miniconda/bin:$PATH"
