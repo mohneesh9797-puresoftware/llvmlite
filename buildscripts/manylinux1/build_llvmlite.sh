@@ -46,6 +46,7 @@ if [ `uname -m` != 'aarch64' ]; then
   # Verify & Test
   pip install *.whl
 else
+  python --version
   yum install -y zlib-devel
   python setup.py install
 fi
