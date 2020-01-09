@@ -46,6 +46,8 @@ if [ `uname -m` != 'aarch64' ]; then
   # Verify & Test
   pip install *.whl
 else
+  wget https://cbs.centos.org/kojifiles/packages/devtoolset-9-gcc/9.1.1/2.4.el7/aarch64/devtoolset-9-gcc-debuginfo-9.1.1-2.4.el7.aarch64.rpm
+  rpm -U devtoolset-9-gcc-debuginfo-9.1.1-2.4.el7.aarch64.rpm
   python --version
   yum install -y gcc 
   yum install -y zlib-devel libedit-devel
